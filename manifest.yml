@@ -1,0 +1,19 @@
+---
+declared-services:
+  text-to-speech-service:
+    label: jf_text_to_speech
+    plan: free
+  speech-to-text-service-standard:
+    label: speech_to_text
+    plan: standard
+  entity-extraction-service:
+    label: entity_extraction_service
+    plan: free
+applications:
+- services:
+  - text-to-speech-service
+  - speech-to-text-service-standard
+  - entity-extraction-service
+  name: jf-text-to-speech
+  path: target/watson-texttospeech-ninja.war
+  memory: 256M

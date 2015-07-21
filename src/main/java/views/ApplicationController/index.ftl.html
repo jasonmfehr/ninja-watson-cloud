@@ -1,0 +1,39 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page">    
+
+<!--
+<h1>${i18n("hello.world")}</h1>
+<p>${i18n("hello.world.json")}</p>
+<a href="/hello_world.json">Hello World Json</a>
+-->
+
+<form method="get" action="speak">
+    <div>
+        <div>
+            <label for="textArea" class="control-label">Enter or paste the text to be synthesized into speech:</label>
+        </div>
+        <div>
+            <textarea id="textArea" name="text" rows="8" required cols="100">
+This is a test
+            </textarea>
+        </div>
+    </div>
+    <div>
+        <select id="voice" name="voice" required>
+            <option value="VoiceEnUsMichael">English male voice</option>
+            <option value="VoiceEnUsLisa">English female voice</option>
+            <option value="VoiceEsEsEnrique">Spanish male voice</option>
+        </select>
+    </div>
+    <div>
+    <input value="Speak" type="button" class="speak-button">
+    </div>
+</form>
+
+<br /><br />
+
+<div>
+    <audio autoplay preload="auto" autobuffer controls class="audio"></audio>
+</div>
+
+</@layout.myLayout>
